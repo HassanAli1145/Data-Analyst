@@ -20,33 +20,33 @@ It also lets them know the price and condition details, thus since by using this
 - Step 7 : Multiple Measures were added i.e. for Total Property, Waterfront , Renovation,Condition and there percentages.It define us whether the factor is Yes or Not and tells us the total property based on factor. 
 DAX Expression for Total Properties:
 	
-    Total Properties = COUNTROWS(FactTable)
+    	Total Properties = COUNTROWS(FactTable)
 DAX Expression for Waterfront :
 	
-    Waterfront Y = CALCULATE([Total Properties],FILTER(FactTable,FactTable[WaterFront ID]=1))
-	Waterfront N = CALCULATE([Total Properties],Dim_WaterFront[WaterFront]="No")
+		Waterfront Y = CALCULATE([Total Properties],FILTER(FactTable,FactTable[WaterFront ID]=1))
+		Waterfront N = CALCULATE([Total Properties],Dim_WaterFront[WaterFront]="No")
 There Percentages:
 	
-    %Waterfront Y = DIVIDE([Waterfront Y],[Total Properties],0)
-	%Waterfront N = DIVIDE([Waterfront N],[Total Properties],0)
+    	%Waterfront Y = DIVIDE([Waterfront Y],[Total Properties],0)
+		%Waterfront N = DIVIDE([Waterfront N],[Total Properties],0)
 DAX Expression for Renovation:
 	
-    Renovated Y = CALCULATE([Total Properties],FILTER(FactTable,FactTable[Renovate ID]=1))
-	Renovated N = CALCULATE([Total Properties],FILTER(FactTable,FactTable[Renovate ID]=0))
+		Renovated Y = CALCULATE([Total Properties],FILTER(FactTable,FactTable[Renovate ID]=1))
+		Renovated N = CALCULATE([Total Properties],FILTER(FactTable,FactTable[Renovate ID]=0))
 There Percentages:
 	
-    %Renovate Y = DIVIDE([Renovated Y],[Total Properties],0)
-	%Renovate N = DIVIDE([Renovated N],[Total Properties],0)
+    	%Renovate Y = DIVIDE([Renovated Y],[Total Properties],0)
+		%Renovate N = DIVIDE([Renovated N],[Total Properties],0)
 DAX Expression for Waterfront :
 	
-    Very Good = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Very Good")
-	Good = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Good")
-	Bad = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Bad")
+    	Very Good = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Very Good")
+		Good = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Good")
+		Bad = CALCULATE([Total Properties],Dim_ConditionStatus[Condition]="Bad")
 There Percentages:
 
-	%Very Good = DIVIDE([Very Good],[Total Properties],0)
-	%Good = DIVIDE([Good],[Total Properties],0)
-	%Bad = DIVIDE([Bad],[Total Properties],0)
+		%Very Good = DIVIDE([Very Good],[Total Properties],0)
+		%Good = DIVIDE([Good],[Total Properties],0)
+		%Bad = DIVIDE([Bad],[Total Properties],0)
 - Step 8 : Firstly we have made the background design on figma and exported it and fit it at the background of the canvas. 
 ![Untitled (3)](https://github.com/user-attachments/assets/49d396f3-a7d7-41cf-b841-d6f45871f58c)
 - Step 9 : It includes One Rctangle rounded corners on left side and other 6 on right side.
